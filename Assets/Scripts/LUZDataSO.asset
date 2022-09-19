@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99aefff78f4deda4fbf0653ef5cab427, type: 3}
-  m_Name: NPCDataCuboRojo
+  m_Script: {fileID: 11500000, guid: c19ea3bccc006a44f97b28d87bfe84ae, type: 3}
+  m_Name: LUZDataSO
   m_EditorClassIdentifier: 
-  dialogueFrases:
-  - Busca las pistas que estan por los laboratorios
-  - Dale
-  - Busca por L2
-  - Si todavia no pudiste empeza el L2 en la parte de adelante
-  - Esta donde se prende la luz en L2
+  LUZFrases:
+  - La siguiente pista esta en la pecera
+  - Ya te di la pista
   hasTalked: 0

@@ -20,7 +20,6 @@ public class KeyPadPassword : MonoBehaviour
     {
         if (passwordInput == password)
         {
-            Debug.Log("Escapaste");
             Destroy(puerta);
             gameObject.SetActive(false);
         }
