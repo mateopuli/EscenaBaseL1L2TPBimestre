@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogoLuz : MonoBehaviour
+public class DialogoPecera : MonoBehaviour
 {
     [SerializeField] GameObject dialogueUI;
     [SerializeField] TextMeshProUGUI textoDelDialogo;
     [SerializeField] string[] frasesDialogo;
     [SerializeField] int posicionFrase;
     [SerializeField] bool hasTalked;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class DialogoLuz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && hasTalked == false)
+        if (Input.GetKeyDown(KeyCode.L) && hasTalked == false)
         {
             NextFrase();
         }
@@ -27,20 +28,20 @@ public class DialogoLuz : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
-        if (other.gameObject.tag == "NPC1")
+        if (other.gameObject.tag == "NPC2")
         {
-            frasesDialogo = other.gameObject.GetComponent<LuzBehaviour>().Data.LUZFrases;
+            frasesDialogo = other.gameObject.GetComponent<PEZBehaviour>().Data.dialoguePEZ;
             dialogueUI.SetActive(true);
 
             if (!hasTalked)
             {
                 //al entrar activa la UI de dialogo
-                textoDelDialogo.text = "La siguiente pista esta en la pecera";
+                textoDelDialogo.text = "La contraseña esta en el cuadro de Marissa Mayer";
             }
 
             else
             {
-                textoDelDialogo.text = "La siguiente pista esta en la pecera";
+                textoDelDialogo.text = "La contraseña esta en el cuadro de Marissa Mayer";
             }
         }
     }

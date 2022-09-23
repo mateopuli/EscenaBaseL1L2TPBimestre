@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogoLuz : MonoBehaviour
+public class CuadroDialogo : MonoBehaviour
 {
     [SerializeField] GameObject dialogueUI;
     [SerializeField] TextMeshProUGUI textoDelDialogo;
@@ -19,7 +19,7 @@ public class DialogoLuz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && hasTalked == false)
+        if (Input.GetKeyDown(KeyCode.K) && hasTalked == false)
         {
             NextFrase();
         }
@@ -27,20 +27,20 @@ public class DialogoLuz : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
-        if (other.gameObject.tag == "NPC1")
+        if (other.gameObject.tag == "NPC3")
         {
-            frasesDialogo = other.gameObject.GetComponent<LuzBehaviour>().Data.LUZFrases;
+            frasesDialogo = other.gameObject.GetComponent<CUADROBehaviour>().Data.dialogueCUADRO;
             dialogueUI.SetActive(true);
 
             if (!hasTalked)
             {
                 //al entrar activa la UI de dialogo
-                textoDelDialogo.text = "La siguiente pista esta en la pecera";
+                textoDelDialogo.text = "La contraseña es el nombre del director de TIC";
             }
 
             else
             {
-                textoDelDialogo.text = "La siguiente pista esta en la pecera";
+                textoDelDialogo.text = "La contraseña es el nombre del director de TIC";
             }
         }
     }
